@@ -5,142 +5,485 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>East Africa Economic Opportunity Locker</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
-            margin: 0;
             padding: 0;
         }
-       .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        
+        .hero {
+            background: linear-gradient(135deg, #004a99 0%, #006bde 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-        h1 {
-            color: #004a99;
-            font-size: 2.5rem;
-            margin-bottom: 0;
-        }
-        h2 {
-            font-size: 1.5rem;
-            color: #006bde;
-            margin-top: 5px;
-            border-bottom: 2px solid #eef;
-            padding-bottom: 10px;
-        }
-        h3 {
-            font-size: 1.2rem;
-            color: #004a99;
-            margin-top: 25px;
+        
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
         }
-        p, li {
-            font-size: 1rem;
-            color: #444;
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
         }
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
         }
-       .pillar {
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+        
+        .vision-section {
+            background: linear-gradient(135deg, #f4f8ff 0%, #e8f4ff 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .vision-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .vision-section h2 {
+            color: #004a99;
+            font-size: 2rem;
             margin-bottom: 20px;
         }
-       .vision-text {
+        
+        .vision-text {
+            font-size: 1.3rem;
+            color: #333;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .concept-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .concept-section h2 {
+            color: #006bde;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #006bde;
+            padding-bottom: 10px;
+        }
+        
+        .concept-text {
             font-size: 1.1rem;
-            font-style: italic;
-            color: #555;
-            margin-top: 15px;
+            line-height: 1.8;
+            color: #444;
         }
-       .value-prop {
-            background-color: #f4f8ff;
+        
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pillar-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             border-left: 5px solid #006bde;
-            padding: 20px;
-            margin-top: 30px;
-            border-radius: 5px;
         }
-       .footer {
-            text-align: center;
-            margin-top: 30px;
+        
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,107,222,0.2);
+        }
+        
+        .pillar-card h3 {
+            color: #004a99;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .pillar-icon {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #006bde 0%, #004a99 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pillar-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .pillar-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pillar-card ul li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .pillar-card ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #006bde;
+            font-weight: bold;
+        }
+        
+        .incentive-note {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
             font-size: 0.9rem;
-            color: #aaa;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .value-prop {
+            background: linear-gradient(135deg, #006bde 0%, #004a99 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 15px 50px rgba(0,107,222,0.3);
+        }
+        
+        .value-prop h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .value-prop p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        
+        .value-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .value-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.05);
+        }
+        
+        .value-item strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(102,126,234,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #004a99;
+            margin: 60px 0 40px 0;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #006bde 0%, #004a99 100%);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #004a99 0%, #006bde 100%);
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            .architecture-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <div class="hero">
+        <h1>🌍 The East Africa Economic Opportunity Locker</h1>
+        <div class="subtitle">Powering Financial Access Across East Africa</div>
+        <div class="tagline">
+            Transforming Digital Identity into Economic Opportunity
+        </div>
+    </div>
+
     <div class="container">
-        <h1>The East Africa Economic Opportunity Locker (EAOL)</h1>
-        <h2>Powering Financial Access Across East Africa</h2>
-
-        <h3>Vision</h3>
-        <p class="vision-text">
-            To empower every East African with ownership of their complete digital identity, transforming it from a static record into a verifiable, intelligent passport for regional economic inclusion.
-        </p>
-
-        <h3>The Concept</h3>
-        <p>
-            The Economic Opportunity Locker is a regional-scale digital ecosystem, not just a data vault. It is a secure, federated platform where a citizen's verifiable data—from national government registries, telcos, banks, and other agencies across East Africa—is brought together under their exclusive control. It is designed to bridge the gap between <strong>identity verification</strong> and <strong>financial access</strong>, enabling any individual or business to prove their creditworthiness and identity instantly, securely, and across borders.
-        </p>
-
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
-
-        <h2>The Core Architecture</h2>
-
-        <div class="pillar">
-            <h3>1. The Federated Data Ecosystem (The Trust Foundation)</h3>
-            <p>The platform aggregates verifiable credentials from a wide ecosystem of trusted "Issuers," who retain ownership and control of their original data. This creates a single, trusted source of truth.</p>
-            <ul>
-                <li><strong>Foundational Registries:</strong> Verified national identity data from core government databases (e.g., Tanzania's NIDA, Uganda's NIRA, Kenya's Maisha Namba).</li>
-                <li><strong>Transactional Verifications:</strong> Real-time, verifiable data from private sector partners, including mobile money operators (like M-Pesa, Tigo Pesa, Airtel Money), bank transaction histories, and SACCO records.</li>
-                <li><strong>Specialized Credentials:</strong> Verifiable data from other public agencies, such as agricultural data (from TARI, NARO), professional licenses, or business permits.</li>
-            </ul>
-            <p style="font-size: 0.9rem; font-style: italic; color: #555;">
-                *Issuers are incentivized to participate by gaining access to a secure, standardized data-sharing rail, reducing their own verification costs and creating new, monetizable value from their data.*
+        <div class="vision-section">
+            <h2>💡 Our Vision</h2>
+            <p class="vision-text">
+                To empower every East African with <strong>ownership of their complete digital identity</strong>, 
+                transforming it from a static record into a <strong>verifiable, intelligent passport</strong> for 
+                regional economic inclusion.
             </p>
         </div>
 
-        <div class="pillar">
-            <h3>2. The Consent Core (The User's Key)</h3>
-            <p>The citizen is the sole owner and arbiter of their Locker. All data sharing is governed by an explicit, granular, and auditable consent-management system.</p>
-            <ul>
-                <li><strong>Total Ownership:</strong> The user decides <strong>what</strong> data to share (e.g., "my mobile money history," but not "my agricultural data").</li>
-                <li><strong>Granular Permission:</strong> The user decides <strong>with whom</strong> to share (e.g., "Bank A," but not "Bank B").</li>
-                <li><strong>Time-Bound Access:</strong> The user decides <strong>for how long</strong> the data is shared (e.g., "for this one-time loan application").</li>
-            </ul>
+        <div class="concept-section">
+            <h2>🎯 The Concept</h2>
+            <p class="concept-text">
+                The <strong>Economic Opportunity Locker</strong> is a regional-scale digital ecosystem, not just a data vault. 
+                It is a secure, federated platform where a citizen's verifiable data—from national government registries, 
+                telcos, banks, and other agencies across East Africa—is brought together under their <strong>exclusive control</strong>.
+            </p>
+            <br>
+            <p class="concept-text">
+                It is designed to bridge the gap between <strong>identity verification</strong> and 
+                <strong>financial access</strong>, enabling any individual or business to prove their creditworthiness 
+                and identity <strong>instantly, securely, and across borders</strong>.
+            </p>
         </div>
 
-        <div class="pillar">
-            <h3>3. The Intelligence Engine (Powered by Kaleidofin)</h3>
-            <p>This is the "brain" that turns verified data into actionable insight. With explicit user consent, Kaleidofin's advanced AI/ML models analyze the federated data to generate a suite of real-time, predictive scores.</p>
-            <ul>
-                <li><strong>Predictive Credit Scores:</strong> Unlocks lending for "New-to-Credit" (NTC) and "thin-file" customers.</li>
-                <li><strong>Comprehensive Insurance Scores:</strong> Enables tailored, affordable micro-insurance policies.</li>
-                <li><strong>Robust Fraud Scores:</strong> Secures the ecosystem by flagging high-risk applications.</li>
-                <li><strong>Dynamic Identity Scores:</strong> Provides strong, multi-dimensional proof of identity.</li>
-            </ul>
+        <h2 class="section-title">🏗️ The Core Architecture</h2>
+
+        <div class="architecture-grid">
+            <div class="pillar-card">
+                <h3>
+                    <span class="pillar-icon">🏛️</span>
+                    1. Federated Data Ecosystem
+                </h3>
+                <p><strong>The Trust Foundation</strong></p>
+                <p>The platform aggregates verifiable credentials from a wide ecosystem of trusted "Issuers," who retain ownership and control of their original data.</p>
+                <ul>
+                    <li><strong>Foundational Registries:</strong> National identity data (Tanzania's NIDA, Uganda's NIRA, Kenya's Maisha Namba)</li>
+                    <li><strong>Transactional Verifications:</strong> Mobile money (M-Pesa, Tigo Pesa, Airtel Money), bank histories, SACCO records</li>
+                    <li><strong>Specialized Credentials:</strong> Agricultural data (TARI, NARO), professional licenses, business permits</li>
+                </ul>
+                <div class="incentive-note">
+                    💰 Issuers gain access to a secure, standardized data-sharing rail, reducing verification costs and creating new value from their data.
+                </div>
+            </div>
+
+            <div class="pillar-card">
+                <h3>
+                    <span class="pillar-icon">🔐</span>
+                    2. The Consent Core
+                </h3>
+                <p><strong>The User's Key</strong></p>
+                <p>The citizen is the sole owner and arbiter of their Locker. All data sharing is governed by explicit, granular, and auditable consent.</p>
+                <ul>
+                    <li><strong>Total Ownership:</strong> User decides <strong>what</strong> data to share (e.g., "mobile money history" only)</li>
+                    <li><strong>Granular Permission:</strong> User decides <strong>with whom</strong> to share (e.g., "Bank A," but not "Bank B")</li>
+                    <li><strong>Time-Bound Access:</strong> User decides <strong>for how long</strong> data is shared (e.g., "one-time loan application")</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card">
+                <h3>
+                    <span class="pillar-icon">🤖</span>
+                    3. Intelligence Engine
+                </h3>
+                <p><strong>Powered by Kaleidofin</strong></p>
+                <p>The "brain" that turns verified data into actionable insight. With user consent, advanced AI/ML models generate real-time, predictive scores.</p>
+                <ul>
+                    <li><strong>Predictive Credit Scores:</strong> Unlocks lending for "New-to-Credit" (NTC) and thin-file customers</li>
+                    <li><strong>Insurance Scores:</strong> Enables tailored, affordable micro-insurance policies</li>
+                    <li><strong>Fraud Scores:</strong> Secures ecosystem by flagging high-risk applications</li>
+                    <li><strong>Identity Scores:</strong> Provides strong, multi-dimensional proof of identity</li>
+                </ul>
+            </div>
         </div>
 
         <div class="value-prop">
-            <h3>The Value: A Single Verification Standard for the East African Economy</h3>
-            <p>The Economic Opportunity Locker creates a single, trusted, and intelligent verification standard for the entire East African economy. It empowers any financial service provider to instantly and confidently verify any customer for any service, enabling:</p>
-            <ul>
-                <li>Instant Digital Savings Account Opening</li>
-                <li>Frictionless Credit & Loan Origination (for individuals, farmers, and MSMEs)</li>
-                <li>Accessible and Affordable Insurance Policies</li>
-                <li>Secure Verification for Supply Chain & Trade Credit</li>
-            </ul>
+            <h3>✨ The Value Proposition</h3>
+            <p>
+                The Economic Opportunity Locker creates a <strong>single, trusted, intelligent verification standard</strong> 
+                for the entire East African economy. It empowers any financial service provider to instantly and confidently 
+                verify any customer for any service.
+            </p>
+            
+            <div class="value-list">
+                <div class="value-item">
+                    <strong>💳 Digital Banking</strong>
+                    Instant savings account opening
+                </div>
+                <div class="value-item">
+                    <strong>💰 Credit Access</strong>
+                    Frictionless loan origination for individuals, farmers & MSMEs
+                </div>
+                <div class="value-item">
+                    <strong>🛡️ Insurance</strong>
+                    Accessible and affordable policies
+                </div>
+                <div class="value-item">
+                    <strong>📊 Trade Finance</strong>
+                    Secure verification for supply chain & trade credit
+                </div>
+            </div>
         </div>
 
-        <div class="footer">
-            <p>© 2025 EAOL Vision</p>
+        <h2 class="section-title">📈 Impact Potential</h2>
+        
+        <div class="stats-section">
+            <div class="stat-card">
+                <span class="stat-number">300M+</span>
+                <span class="stat-label">Population Served</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">70%</span>
+                <span class="stat-label">Unbanked Population</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">6</span>
+                <span class="stat-label">EAC Member States</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">$1B+</span>
+                <span class="stat-label">Economic Impact Potential</span>
+            </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>East Africa Economic Opportunity Locker</strong></p>
+        <p>Transforming Identity into Opportunity</p>
+        <p>© 2025 EAOL Platform</p>
     </div>
 
 </body>
 </html>
-
