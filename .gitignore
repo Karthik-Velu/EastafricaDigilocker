@@ -8,4 +8,5 @@
 
 # Build artifacts
 *.log
+generate_pdf.py
 
