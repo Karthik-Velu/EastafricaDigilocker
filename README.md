@@ -1,29 +1,25 @@
-# East Africa Economic Opportunity Locker (EAOL)
+# The Identity Vault
 
-A vision platform for transforming digital identity into economic opportunity across East Africa.
+East Africa's Economic Access Platform - Transforming digital identity into verifiable economic opportunity.
 
 ## 🌍 Live Site
 
-**https://karthik-velu.github.io/eaol-platform/**
+**https://karthik-velu.github.io/EastafricaDigilocker/**
 
 ## 📖 Overview
 
-The East Africa Economic Opportunity Locker (EAOL) is a regional-scale digital ecosystem designed to empower every East African with ownership of their complete digital identity, transforming it from a static record into a verifiable, intelligent passport for regional economic inclusion.
+The Identity Vault is a regional-scale digital ecosystem designed to empower every East African with ownership of their complete digital identity, transforming it from a static record into a verifiable, intelligent passport that unlocks financial access instantly, securely, and across borders.
 
-## 🏗️ Core Architecture
+## 🏗️ Three-Layer Architecture
 
-### 1. The Federated Data Ecosystem
-A trust foundation aggregating verifiable credentials from government registries, telcos, banks, and agencies across East Africa—all under exclusive citizen control.
+### 1. The Trust Layer - Federated Data Ecosystem
+A secure platform aggregating verifiable credentials from trusted sources—governments, telcos, banks—all under exclusive citizen control.
 
-### 2. The Consent Core
-Citizen-owned data governance with granular, time-bound permissions ensuring total control over what data is shared, with whom, and for how long.
+### 2. The Control Layer - Consent-Driven Architecture
+Citizens retain complete ownership with explicit, granular, auditable consent governing all data sharing.
 
-### 3. The Intelligence Engine (Powered by Kaleidofin)
-Advanced AI/ML models that transform verified data into actionable insights:
-- Predictive Credit Scores
-- Comprehensive Insurance Scores
-- Robust Fraud Scores
-- Dynamic Identity Scores
+### 3. The Intelligence Layer - AI-Powered Decisioning
+Advanced AI/ML models transform verified data into real-time, predictive scores for credit, risk, and insurance.
 
 ## 💡 Vision
 
@@ -43,5 +39,5 @@ Simple, clean HTML/CSS implementation focused on clear communication of the visi
 
 ---
 
-*© 2025 EAOL Vision*
+*Powered by Kaleidofin | © 2025*
 
