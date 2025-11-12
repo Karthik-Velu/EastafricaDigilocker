@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Temporary files
+~$*.docx
+~$*.xlsx
+*.tmp
+
+# Build artifacts
+*.log
+
